@@ -1,0 +1,173 @@
+@import url("https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@500;600&display=swap");
+
+:root {
+  --color-primary-1: #7541c8;
+  --color-primary-2: #48556a;
+  --color-primary-3: #19212e;
+  --color-white: #ffffff;
+  --color-neutral-300: #cfcfcf;
+  --color-neutral-200: #ecf2f8;
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Barlow Semi Condensed", sans-serif;
+  /* credits to HEROPATTERNS.COM for this reapetable background */
+  background-color: #dfdbe5;
+  background-image: url("data:image/svg+xml,%3Csvg width='64' height='64' viewBox='0 0 64 64' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M8 16c4.418 0 8-3.582 8-8s-3.582-8-8-8-8 3.582-8 8 3.582 8 8 8zm0-2c3.314 0 6-2.686 6-6s-2.686-6-6-6-6 2.686-6 6 2.686 6 6 6zm33.414-6l5.95-5.95L45.95.636 40 6.586 34.05.636 32.636 2.05 38.586 8l-5.95 5.95 1.414 1.414L40 9.414l5.95 5.95 1.414-1.414L41.414 8zM40 48c4.418 0 8-3.582 8-8s-3.582-8-8-8-8 3.582-8 8 3.582 8 8 8zm0-2c3.314 0 6-2.686 6-6s-2.686-6-6-6-6 2.686-6 6 2.686 6 6 6zM9.414 40l5.95-5.95-1.414-1.414L8 38.586l-5.95-5.95L.636 34.05 6.586 40l-5.95 5.95 1.414 1.414L8 41.414l5.95 5.95 1.414-1.414L9.414 40z' fill='%239C92AC' fill-opacity='0.17' fill-rule='evenodd'/%3E%3C/svg%3E");
+}
+
+blockquote,
+figcaption {
+  font-size: 13px;
+}
+
+blockquote {
+  line-height: 1.5;
+}
+
+img {
+  display: block;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  justify-content: center;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 3rem 1.5rem;
+}
+
+.grid {
+  display: grid;
+  gap: 1.5rem;
+  grid-template-areas:
+    "first"
+    "second"
+    "third"
+    "fourth"
+    "fifth";
+}
+
+.grid > section {
+  padding: 1.5rem;
+  box-shadow: 1rem 1rem 3rem rgba(0, 0, 0, 0.125);
+}
+
+figure {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+figure > div {
+  margin-right: 1rem;
+}
+
+figure img {
+  width: 2rem;
+  border-radius: 50%;
+}
+
+figcaption {
+  color: var(--color-neutral-200);
+  font-weight: 600;
+}
+
+figcaption .stat {
+  opacity: 50%;
+}
+
+blockquote {
+  opacity: 70%;
+  color: var(--color-neutral-200);
+  font-weight: 500;
+}
+
+.name {
+  font-size: 1rem;
+}
+.stat {
+  font-weight: 500;
+}
+
+.grid > section p {
+  margin-bottom: 1rem;
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--color-neutral-200);
+}
+
+.dark-contrast {
+  color: var(--color-primary-2) !important;
+}
+
+.grid-1 {
+  background-color: var(--color-primary-1);
+  border-radius: 0.5rem;
+  position: relative;
+  overflow: hidden;
+  background-image: url(images/bg-pattern-quotation.svg);
+  background-repeat: no-repeat;
+  background-position: top right 1rem;
+  background-size: 100px;
+  grid-area: first;
+}
+
+.grid-2 {
+  background-color: var(--color-primary-2);
+  border-radius: 0.5rem;
+  grid-area: second;
+}
+
+.grid-3 {
+  background-color: var(--color-white);
+  border-radius: 0.5rem;
+  grid-area: third;
+}
+
+.grid-4 {
+  background-color: var(--color-primary-3);
+  border-radius: 0.5rem;
+  grid-area: fourth;
+}
+
+.grid-5 {
+  background-color: var(--color-white);
+  border-radius: 0.5rem;
+  grid-area: fifth;
+}
+
+/* layout for tablet screens */
+@media (min-width: 640px) {
+  .grid {
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+      "first first"
+      "fourth third"
+      "fourth second"
+      "fifth fifth";
+  }
+  .grid-1 {
+    background-position: top right 6rem;
+  }
+}
+
+/* layout for desktop screens */
+@media (min-width: 1024px) {
+  .grid {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-areas:
+      "first first second fifth"
+      "third fourth fourth fifth";
+  }
+}
